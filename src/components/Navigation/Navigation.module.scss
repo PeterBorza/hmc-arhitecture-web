@@ -1,0 +1,82 @@
+$navHeight: 60px;
+
+.logoPic {
+  width: 25%;
+}
+
+.nav {
+  padding: 0 5ch;
+  width: 100%;
+  height: $navHeight;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  left: 0;
+  top: 0;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9) 5%,
+    rgba(0, 0, 0, 0.01) 95%
+  );
+  z-index: 1;
+  ul {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    li {
+      position: relative;
+      list-style-type: none;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 15ms ease;
+      background: transparent;
+      a {
+        display: block;
+        text-decoration: none;
+        color: whitesmoke;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        &::after {
+          position: absolute;
+          content: "";
+          left: 15%;
+          bottom: 0;
+          width: 70%;
+          height: 2px;
+          background: red;
+          transform: scale(0);
+          transition: all 120ms ease-in;
+          opacity: 0;
+        }
+        &:hover {
+          color: rgba(255, 255, 255, 0.5);
+        }
+        &:hover::after {
+          transform: scale(1);
+          transform-origin: center;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.footerNav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $navHeight;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9) 5%,
+    rgba(0, 0, 0, 0.01) 95%
+  );
+}

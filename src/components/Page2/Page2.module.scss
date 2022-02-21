@@ -1,0 +1,12 @@
+.page2Wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: darkgray;
+  // object-fit: cover;
+  img {
+    margin: auto;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 90vh;
+  }
+}
