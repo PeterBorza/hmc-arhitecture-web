@@ -7,11 +7,11 @@ export type AnimationDirection = "up" | "down" | "fromLeft" | "fromRight";
 
 export type ImageType = {
   id: string;
-  src: string | undefined;
+  src: string;
   delay: number;
   duration: number;
   spacing: number;
-  direction?: AnimationDirection;
+  direction: AnimationDirection;
 };
 
 const CustomImage: React.FC<ImageType> = ({

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 import ScrollPage from "../ScrollPage";
 import { LinkContext } from "../../app/context";

@@ -61,6 +61,10 @@ $sidebar-width: min(250px, 30%);
     margin: 0.3rem;
     width: 100%;
   }
+  & > li:last-child a {
+    color: red;
+    margin: auto;
+  }
   a {
     font-size: 1.5rem;
     text-decoration: none;
@@ -70,6 +74,22 @@ $sidebar-width: min(250px, 30%);
     &:hover {
       color: darken($darkModeWhite, 5%);
     }
+    .selected {
+      color: red;
+    }
     @include truncate;
+  }
+}
+
+.content-styles {
+  transform: translateX(-30px);
+  opacity: 0;
+  border: 1px solid red;
+  transition: all 200ms ease-in;
+  transition-delay: 100ms;
+  &__visible {
+    transform: translateX(0);
+    opacity: 1;
+    border: 1px solid whitesmoke;
   }
 }
