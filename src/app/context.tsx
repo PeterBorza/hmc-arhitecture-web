@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactElement, ReactNode } from "react";
 
 import { v4 as uuid } from "uuid";
 
@@ -20,7 +20,7 @@ import { ImageType } from "../components/CustomImage/CustomImage";
 export interface LinkDataTypes {
   id: string;
   to: string;
-  label: string;
+  label: string | ReactElement;
 }
 
 export type ContextType = {
@@ -43,6 +43,11 @@ export const LinkContextProvider = ({ children }: { children: ReactNode }) => {
       id: uuid(),
       to: "page2",
       label: "scrollers",
+    },
+    {
+      id: uuid(),
+      to: "page3",
+      label: "Sign up",
     },
   ];
 

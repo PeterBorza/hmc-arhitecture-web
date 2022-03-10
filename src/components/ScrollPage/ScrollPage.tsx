@@ -1,6 +1,11 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { v4 as uuid } from "uuid";
+
+import { NavHashLink } from "react-router-hash-link";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
+
 import styles from "./ScrollPage.module.scss";
+import PageContent from "./PageContent";
 
 export interface PagesType {
   id: string;
@@ -25,21 +30,26 @@ const articles: PagesType[] = mockPages.map(page => ({
 }));
 
 const ScrollPage: FC<ScrollProps> = ({ pages = articles }) => {
+  // const ref = useRef<HTMLDivElement | null>(null);
+  // const entry = useIntersectionObserver(ref, {});
+  // const isVisible = !!entry?.isIntersecting;
+
   return (
     <section className={styles.section}>
       <aside className={styles["aside-navigation"]}>
         <ul className={styles["link-shell"]}>
           {pages.map(link => (
             <li key={link.id}>
-              <a href={`#${link.label}`}>{link.label}</a>
+              <NavHashLink to={`#${link.label}`}>{link.label}</NavHashLink>
             </li>
           ))}
+          <li>
+            <NavHashLink to={`#top`}>scroll to top</NavHashLink>
+          </li>
         </ul>
       </aside>
       {pages.map(link => (
-        <article key={link.id} className={styles.article} id={link.label}>
-          {link.content}
-        </article>
+        <PageContent key={`page-content-${link.id}`} {...link} />
       ))}
     </section>
   );

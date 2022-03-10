@@ -8,11 +8,9 @@ import styles from "./Home.module.scss";
 
 const Home = () => {
   return (
-    <>
-      <FloatingImage src={halaalbnegru}>
-        <img className={styles.homePhoto} src={logo1} alt="logo water-mark" />
-      </FloatingImage>
-    </>
+    <FloatingImage src={halaalbnegru}>
+      <img className={styles.homePhoto} src={logo1} alt="logo water-mark" />
+    </FloatingImage>
   );
 };
 
