@@ -1,0 +1,59 @@
+.text-float {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.text-floater {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  animation: enter-on-mount 2000ms ease forwards;
+  &__bottom {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  &__top {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  &__left {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  &__right {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  &__fade-in {
+    opacity: 0;
+  }
+  &__fade-out {
+    opacity: 1;
+    animation: fade-out 500ms ease forwards;
+    @keyframes fade-out {
+      to {
+        opacity: 0;
+      }
+    }
+  }
+  @keyframes enter-on-mount {
+    0%,
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
+
+@for $i from 0 through 10000 {
+  .text-floater-#{$i} {
+    animation-delay: $i * 1ms;
+  }
+}

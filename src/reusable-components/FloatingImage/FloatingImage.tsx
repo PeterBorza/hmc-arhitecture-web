@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import styles from "./FloatingImage.module.scss";
 
 export type FloatingImageProps = {
@@ -6,7 +5,7 @@ export type FloatingImageProps = {
   alt?: string;
 };
 
-const FloatingImage: FC<FloatingImageProps> = ({
+const FloatingImage: React.FC<FloatingImageProps> = ({
   src,
   alt = "floating image",
   children,
