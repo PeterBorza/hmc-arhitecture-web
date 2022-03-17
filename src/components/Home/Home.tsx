@@ -1,15 +1,17 @@
-import React from "react";
-
 import logo1 from "../../images/005.png";
 import halaalbnegru from "../../images/halaalbnegru.jpg";
-import FloatingImage from "../../reusable-components/FloatingImage";
+import { FloatingImage, FloatingText } from "../../reusable-components";
 
-import styles from "./Home.module.scss";
+// import styles from "./Home.module.scss";
 
 const Home = () => {
   return (
     <FloatingImage src={halaalbnegru}>
-      <img className={styles.homePhoto} src={logo1} alt="logo water-mark" />
+      <div>
+        <FloatingText delay={1000} direction="top">
+          <img src={logo1} alt="logo water-mark" />
+        </FloatingText>
+      </div>
     </FloatingImage>
   );
 };
