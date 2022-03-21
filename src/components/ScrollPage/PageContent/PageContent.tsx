@@ -16,8 +16,6 @@ const PageContent: FC<PagesType> = ({ id, label, content }) => {
     [styles["content-styles__visible"]]: isVisible,
   });
 
-  console.log(`Render Section ${label}`, { isVisible });
-
   return (
     <article ref={ref} key={id} className={styles.article} id={label}>
       <span className={classes}>{content}</span>

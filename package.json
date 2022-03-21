@@ -2,14 +2,15 @@
   "name": "hmc-arhitecture-web",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5020",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
     "axios": "^0.19.2",
     "classnames": "^2.3.1",
+    "concurrently": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
-    "react-router": "^6.2.2",
     "react-router-dom": "^6.2.1",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.0",
@@ -21,9 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm run build && (cd server && npm start)"
+    "start": "cd server && npm start",
+    "run-app": "concurrently \"npm run start\" \"npm run start-client\""
   },
-  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },

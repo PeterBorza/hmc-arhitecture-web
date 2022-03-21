@@ -44,6 +44,11 @@ $navHeight: 3rem;
         text-transform: uppercase;
         padding: 5px 10px;
         font-size: clamp(0.8rem, 2.1vw, 1.5rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        word-break: break-all;
         &::after {
           position: absolute;
           content: "";

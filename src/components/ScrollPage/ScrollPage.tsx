@@ -1,8 +1,7 @@
-import { FC, useRef } from "react";
+import React from "react";
 import { v4 as uuid } from "uuid";
 
 import { NavHashLink } from "react-router-hash-link";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 import styles from "./ScrollPage.module.scss";
 import PageContent from "./PageContent";
@@ -29,22 +28,22 @@ const articles: PagesType[] = mockPages.map(page => ({
   ),
 }));
 
-const ScrollPage: FC<ScrollProps> = ({ pages = articles }) => {
-  // const ref = useRef<HTMLDivElement | null>(null);
-  // const entry = useIntersectionObserver(ref, {});
-  // const isVisible = !!entry?.isIntersecting;
-
+const ScrollPage = ({ pages = articles }: ScrollProps) => {
   return (
     <section className={styles.section}>
       <aside className={styles["aside-navigation"]}>
         <ul className={styles["link-shell"]}>
           {pages.map(link => (
             <li key={link.id}>
-              <NavHashLink to={`#${link.label}`}>{link.label}</NavHashLink>
+              <NavHashLink smooth to={`#${link.label}`}>
+                {link.label}
+              </NavHashLink>
             </li>
           ))}
           <li>
-            <NavHashLink to={`#top`}>scroll to top</NavHashLink>
+            <NavHashLink smooth to={`#top`}>
+              scroll to top
+            </NavHashLink>
           </li>
         </ul>
       </aside>
