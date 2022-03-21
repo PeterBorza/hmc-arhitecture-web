@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { NavLink as NavigationLink } from "react-router-dom";
+import { Link as NavigationLink } from "react-router-dom";
 
 import { LinkDataTypes } from "../../../app/context";
 
