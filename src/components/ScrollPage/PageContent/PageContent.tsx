@@ -1,5 +1,5 @@
 import { FC, useRef } from "react";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver";
 import { PagesType } from "../ScrollPage";
 
 import classNames from "classnames";

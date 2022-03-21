@@ -1,6 +1,6 @@
 // import { FloatingText } from "../../reusable-components";
 import { DirectionType } from "../../reusable-components/FloatingText/FloatingText";
-import useFetch from "../../utils/useFetch";
+import useFetch from "../../hooks/useFetch";
 import styles from "./Page3.module.scss";
 
 // type TextType = {
@@ -57,7 +57,9 @@ const Page3 = () => {
           </div>
         ))
       ) : (
-        <h1>LOADING...</h1>
+        <h1 style={{ textAlign: "center", marginTop: "5vh" }}>
+          cd server and npm start...
+        </h1>
       )}
     </div>
   );
